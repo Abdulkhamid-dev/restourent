@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Create your own art</h2>
+          </div>
+          <hr/>
+          <div class="modal-body">
+          <form action=""  id="formFood">
+            <input required type="text" placeholder="Food name" id="foodName">        
+            <input required type="number" placeholder="Price" id="price">        
+            <input required type="text" placeholder="Description" id="descp">   
+            <select name="category" id="inpSelect">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>     
+            <input required type="text" placeholder="Image" id="imgSrc">
+            <hr>
+            <div class="modal-footer">
+                <button type="submit" class="create_btn">Create</button>
+               </div>   
+          </form>
+          </div>
+        </div>
+      
+      </div>
+      <div id="myModalSecond" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="closeUpdate">&times;</span>
+            <h2>Update your own art</h2>
+          </div>
+          <hr/>
+          <div class="modal-body">
+          <form action=""  id="formFoodUpdate" title="">
+            <input required type="text" placeholder="Food name" id="foodNameUpdate" name="foodNameUpdate">        
+            <input required type="number" placeholder="Price" id="priceUpdate" name="priceUpdate">        
+            <input required type="text" placeholder="Description" id="descpUpdate" name="descpUpdate">   
+            <select name="categoryUpdate" id="categoryUpdate">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>     
+            <input required type="text" placeholder="Image" id="imgSrcUpdate" name="imgSrcUpdate">
+            <hr>
+            <div class="modal-footer">
+                <button type="submit" class="create_btn updateBtn" id="">Update</button>
+               </div>   
+          </form>
+          </div>
+        </div>
+      
+      </div>
+    <main>
+        <div class="sidebar">
+            <div class="logo_block">
+                <a href="#">
+                    <img src="ASSETS/img/Dark.svg" alt="">
+                </a>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="#!" class="link"><img src="ASSETS/img/Icon.svg" alt="">Home</a></li>
+                </ul>
+            </div>
+            <div class="sidebar_footer">
+                <img src="ASSETS/img/Image.svg" alt="">
+                <div class="text_user">
+                 <h3>Mark Clarke</h3>
+                 <p>markclarke@gmail.com</p>
+                </div>
+                <div style="display: grid;">
+                    <i class="fas fa-chevron-up"></i>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+        <div class="main_block">
+            <div class="top_main">
+                <h1>Explore categories</h1>
+                <h4 id="myBtn"><i class="fas fa-plus"></i>Creat</h4>
+            </div>
+            <div class="categories_block">
+                <div class="categorie_card" onclick="renderByCategory('breakfast')">
+                    <img src="ASSETS/img/Breakfast.svg" alt="">
+                    <h3>Breakfast</h3>
+                    <p>$95</p>
+                </div>
+                <div class="categorie_card" onclick="renderByCategory('lunch')">
+                    <img src="ASSETS/img/Lunch.svg" alt="">
+                    <h3>Lunch</h3>
+                    <p>$324</p>
+                </div>
+                <div class="categorie_card" onclick="renderByCategory('dinner')">
+                    <img src="ASSETS/img/Dinner.svg" alt="">
+                    <h3>Dinner</h3>
+                    <p>$95</p>
+                </div>
+                <div class="categorie_card" onclick="sortPrice(0, 10)">
+                    <img src="ASSETS/img/Cheap.svg" alt="">
+                    <h3>Cheap</h3>
+                    <p id="cheapPrice">$85</p>
+                </div>
+                <div class="categorie_card" onclick="sortPrice(11, 30)">
+                    <img src="ASSETS/img/Medium.svg" alt="">
+                    <h3>Moderate</h3>
+                    <p id="mediumPrice">$150</p>
+                </div>
+                <div class="categorie_card" onclick="sortPrice(31, 50)">
+                    <img src="ASSETS/img/Expensive.svg" alt="">
+                    <h3>Expensive</h3>
+                    <p id="expensivePrice">$250</p>
+                </div>
+            </div>
+            <div class="main_card_block" id="cardsBlock">
+           
+            </div>
+        </div>
+    </main>
+
+
+    <script src="JS/main.js"></script>
+</body>
+</html>
